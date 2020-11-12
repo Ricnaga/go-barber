@@ -2,8 +2,8 @@ import React, {createContext, useCallback, useState} from 'react'
 import api from '../services/api'
 
 interface AuthState{
-    token:string;
-    user:object;
+    token: string;
+    user: object;
 }
 
 interface SignInCredentials{
@@ -21,7 +21,7 @@ export const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 export const AuthProvider: React.FC = ({children}) => {
     const [data, setData] = useState<AuthState>(() => {
         const token = localStorage.getItem('@GoBarber:token')
-        const user = localStorage.getItem('@GoBarber:user')
+        const user = localStorage.getItem('@GoBarber:userWithoutPassword')
 
         if(token && user){
             return {token, user: JSON.parse(user)}
@@ -35,10 +35,12 @@ export const AuthProvider: React.FC = ({children}) => {
             email,
             password,
         })
-        const {token, user} = response.data
+        
+        const {token, userWithoutPassword} = response.data
+        const user = userWithoutPassword;
 
         localStorage.setItem('@GoBarber:token', token)
-        localStorage.setItem('@GoBarber:user', JSON.stringify(user))
+        localStorage.setItem('@GoBarber:userWithoutPassword', JSON.stringify(user))
 
         setData({token, user})
     }, [])

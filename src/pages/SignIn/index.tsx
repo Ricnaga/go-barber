@@ -24,8 +24,6 @@ const SignIn: React.FC = ()=> {
  
     const handleSubmit = useCallback( async(data: SignInFormData) => {
         try {
-            formRef.current?.setErrors({});
-
             const schema = Yup.object().shape({
                 email: Yup.string()
                 .required('E-mail obrigatório')
@@ -37,12 +35,12 @@ const SignIn: React.FC = ()=> {
             await schema.validate(data, {
                 abortEarly: false
             })
-            
             signIn({
                 email: data.email,
                 password:data.password,
             })
         } catch (error) {
+            console.log(error)
             const errors = getValidationErrors(error)
 
             formRef.current?.setErrors(errors)
