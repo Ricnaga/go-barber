@@ -3,12 +3,14 @@ import {FiArrowLeft, FiMail,FiLock, FiUser} from 'react-icons/fi';
 import {Form} from '@unform/web'
 import {FormHandles} from '@unform/core'
 import * as Yup from 'yup'
+import {Link} from 'react-router-dom'
+
 import logoImg from '../../assets/logo.svg';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import getValidationErrors from '../../utils/getValidationErrors'
 
-import {Container, Content, Background} from './styles'
+import {Container, Content, Background, AnimationContainer} from './styles'
 
 const SignUp: React.FC = ()=> {
     const formRef = useRef<FormHandles>(null)
@@ -38,6 +40,7 @@ const SignUp: React.FC = ()=> {
         <Container>
         <Background />
         <Content>
+            <AnimationContainer>
         <img src={logoImg} alt="GoBarber"/>
 
         <Form ref={formRef} onSubmit={handleSubmit}>
@@ -50,12 +53,12 @@ const SignUp: React.FC = ()=> {
             placeholder="Senha" />
             <Button type="submit">Cadastrar</Button>
         </Form>
-            <a href="account">
+            <Link to="/">
                 <FiArrowLeft/>
                 Voltar para logon
-            </a>
-        
-        </Content>        
+            </Link>
+            </AnimationContainer>
+        </Content>
     </Container>
     )
 };

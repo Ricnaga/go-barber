@@ -4,7 +4,7 @@ import ToastContainer from '../components/ToastContainer'
 
 export interface ToastMessage{
     id:string;
-    type?: 'success' | 'error' | 'info';
+    type?: 'info' | 'success' | 'error';
     title: string;
     description?: string;
 }
@@ -24,6 +24,7 @@ const ToastProvider: React.FC = ({children}) => {
 
         const toast = {
             id,
+            type,
             title,
             description,
         }
