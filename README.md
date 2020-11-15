@@ -1,6 +1,6 @@
 #### <div align="right">- Projeto Finalizado <div>
-# <div align="center">Desafio ReactJS <div>
-## <div align="center">Desafio ReactJS que simula uma API<div>
+# <div align="center">Exercício ReactJS <div>
+## <div align="center">Exercício ReactJS que simula acesos a uma aplicação que realiza agendamento de serviços de barbearia<div>
 ### <div align="center">Sumário <div>
 ### <div align="center">================= <div>
 <!--ts-->
