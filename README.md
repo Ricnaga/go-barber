@@ -41,4 +41,4 @@ Gostou? tem alguma sugestão de melhoria? por favor, entre em contato e ja aprov
 
 ## <div align="center">Licença<div>
 
-![GitHub](https://img.shields.io/github/license/Ricnaga/desafioReact)
+![GitHub](https://img.shields.io/github/license/Ricnaga/GoBarberWeb)
