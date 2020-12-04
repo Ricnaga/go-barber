@@ -9,6 +9,7 @@ import api from '../services/api'
 interface User{
     id: string;
     name: string;
+    email: string;
     avatar_url:string;
 }
 
@@ -33,7 +34,7 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 export const AuthProvider: React.FC = ({children}) => {
     const [data, setData] = useState<AuthState>(() => {
         const token = localStorage.getItem('@GoBarber:token')
-        const user = localStorage.getItem('@GoBarber:userWithoutPassword')
+        const user = localStorage.getItem('@GoBarber:user')
 
         if(token && user){
             return {token, user: JSON.parse(user)}
@@ -48,18 +49,17 @@ export const AuthProvider: React.FC = ({children}) => {
             password,
         })
         
-        const {token, userWithoutPassword} = response.data
-        const user = userWithoutPassword;
-
+        const {token, user} = response.data
+        
         localStorage.setItem('@GoBarber:token', token)
-        localStorage.setItem('@GoBarber:userWithoutPassword', JSON.stringify(user))
-
+        localStorage.setItem('@GoBarber:user', JSON.stringify(user))
+        
         setData({token, user})
     }, [])
 
     const signOut = useCallback(async () => {
         localStorage.removeItem('@GoBarber:token')
-        localStorage.removeItem('@GoBarber:userWithoutPassword')
+        localStorage.removeItem('@GoBarber:user')
 
         setData({} as AuthState)
     }, [])

@@ -1,5 +1,4 @@
 import React, {ButtonHTMLAttributes} from 'react';
-import { bool, boolean } from 'yup';
 import {Container} from './styles'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
