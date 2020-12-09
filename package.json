@@ -33,11 +33,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage":"react-scripts test --coverage --watchAll false",
+    "test:coverage": "react-scripts test --coverage --watchAll false",
     "eject": "react-scripts eject"
   },
-  "jest":{
-    "collectCoverageFrom":[
+  "jest": {
+    "collectCoverageFrom": [
       "src/pages/**/*.tsx",
       "src/components/**/*.tsx",
       "src/hooks/**/*.tsx",
@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.7.0",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
     "@types/uuid": "^8.3.0",
@@ -72,6 +73,7 @@
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.1"
   }
 }
