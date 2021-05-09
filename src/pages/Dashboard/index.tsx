@@ -1,25 +1,25 @@
+import { format, isAfter, isToday, parseISO } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import DayPicker, { DayModifiers } from 'react-day-picker';
-import { isToday, format, parseISO, isAfter } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
 import 'react-day-picker/lib/style.css';
 import { FiClock, FiPower } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import {
-  Container,
-  Header,
-  HeaderContent,
-  Profile,
-  Content,
-  Schedule,
-  NextAppointment,
-  Section,
-  Appointment,
-  Calendar,
-} from './styles';
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
+import {
+  Appointment,
+  Calendar,
+  Container,
+  Content,
+  Header,
+  HeaderContent,
+  NextAppointment,
+  Profile,
+  Schedule,
+  Section,
+} from './styles';
 
 interface MonthAvailabilityItem {
   day: number;

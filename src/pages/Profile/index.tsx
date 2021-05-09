@@ -1,18 +1,16 @@
-import React, { ChangeEvent, useCallback, useRef } from 'react';
-import { FiMail, FiLock, FiUser, FiCamera, FiArrowLeft } from 'react-icons/fi';
-import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import * as Yup from 'yup';
+import { Form } from '@unform/web';
+import React, { ChangeEvent, useCallback, useRef } from 'react';
+import { FiArrowLeft, FiCamera, FiLock, FiMail, FiUser } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
-
-import api from '../../services/api';
+import * as Yup from 'yup';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import getValidationErrors from '../../utils/getValidationErrors';
-import { useToast } from '../../hooks/toast';
-
-import { Container, Content, AvatarInput } from './styles';
 import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
+import api from '../../services/api';
+import getValidationErrors from '../../utils/getValidationErrors';
+import { AvatarInput, Container, Content } from './styles';
 
 interface ProfileData {
   name: string;
@@ -103,7 +101,7 @@ const Profile: React.FC = () => {
         });
       }
     },
-    [addToast, history],
+    [addToast, history, updateUser],
   );
 
   const handleAvatarChange = useCallback(

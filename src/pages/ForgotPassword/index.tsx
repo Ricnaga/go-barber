@@ -1,17 +1,16 @@
+import { FormHandles } from '@unform/core';
+import { Form } from '@unform/web';
 import React, { useCallback, useRef, useState } from 'react';
 import { FiLogIn, FiMail } from 'react-icons/fi';
-import * as Yup from 'yup';
-import { Form } from '@unform/web';
-import { FormHandles } from '@unform/core';
 import { Link } from 'react-router-dom';
-
+import * as Yup from 'yup';
 import logoImg from '../../assets/logo.svg';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import getValidationErrors from '../../utils/getValidationErrors';
-import { Container, Content, Background, AnimationContainer } from './styles';
 import { useToast } from '../../hooks/toast';
 import api from '../../services/api';
+import getValidationErrors from '../../utils/getValidationErrors';
+import { AnimationContainer, Background, Container, Content } from './styles';
 
 interface ForgotPasswordFormData {
   email: string;

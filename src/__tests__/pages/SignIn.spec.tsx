@@ -1,5 +1,5 @@
+import { fireEvent, render, wait } from '@testing-library/react';
 import React from 'react';
-import { render, fireEvent, wait } from '@testing-library/react';
 import SignIn from '../../pages/SignIn';
 
 const mockedHistoryPush = jest.fn();
